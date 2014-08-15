@@ -28,4 +28,4 @@ class Kinect{
         oni.update();
     }
 }
-    
+
