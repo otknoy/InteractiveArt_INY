@@ -101,7 +101,7 @@ void draw(){
     
     //- 幽霊画像処理（顔認識が指定した回数連続して成功し、かつ設定したフレームカウントを超えるフレームでのみ実行）
     if(detection_flg && detection_count >= detection_num && (frameCount - update_frame) >= (30 * face_update_sec)){
-        goast.updateFace(kinect_image.get().pixels, kinect.getDepthMap(), face.getFace(), face.getLeftEye(), face.getRightEye(), kinect_image.width, kinect_image.height, scr_image.width, scr_image.height);
+        //goast.updateFace(kinect_image.get().pixels, kinect.getDepthMap(), face.getFace(), face.getLeftEye(), face.getRightEye(),kinect_image.width, kinect_image.height, scr_image.width, scr_image.height);
         goast.updateGoastPos(frameleft, frameright);
         //- 幽霊画像を更新した時のフレームカウントを保存しておく
         update_frame = frameCount;

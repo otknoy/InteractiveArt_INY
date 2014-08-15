@@ -3,12 +3,12 @@ class FaceDetection{
     //- 顔認識用のOpenCVオブジェクト
     private OpenCV ocvf;
     //- 目認識用のOpenCVオブジェクト
-    private OpenCV ocve;
+    //private OpenCV ocve;
     //- 顔の位置と大きさを記憶する
     private Rectangle face;
     //- 目の位置と大きさを記憶する
-    private Rectangle lefteye;
-    private Rectangle righteye;
+    //private Rectangle lefteye;
+    //private Rectangle righteye;
     
     //- コンストラクタ
     FaceDetection(PApplet app, int w, int h){
@@ -16,8 +16,8 @@ class FaceDetection{
         ocvf = new OpenCV(app, w, h);
         ocvf.loadCascade(OpenCV.CASCADE_FRONTALFACE);
         //- 目認識
-        ocve = new OpenCV(app, w, h);
-        ocve.loadCascade(OpenCV.CASCADE_EYE);
+        //ocve = new OpenCV(app, w, h);
+        //ocve.loadCascade(OpenCV.CASCADE_EYE);
     }
     
     /*---------- 情報取得 ----------*/
@@ -28,14 +28,14 @@ class FaceDetection{
     }
     
     //- 左目の位置と大きさを取得
-    Rectangle getLeftEye(){
+    /*Rectangle getLeftEye(){
         return lefteye;
-    }
+    }*/
 
     //- 右目の位置と大きさを取得
-    Rectangle getRightEye(){
+    /*Rectangle getRightEye(){
         return righteye;
-    }
+    }*/
     
     //- 顔部分の画像を取得する
     PImage getFaceImage(){
@@ -70,8 +70,8 @@ class FaceDetection{
         //- 顔領域の描画
         rect(face.x, face.y, face.width, face.height);
         //- 目領域の描画
-        ellipse(lefteye.x, lefteye.y, lefteye.width, lefteye.height);
-        ellipse(righteye.x, righteye.y, righteye.width, righteye.height);   
+        //ellipse(lefteye.x, lefteye.y, lefteye.width, lefteye.height);
+        //ellipse(righteye.x, righteye.y, righteye.width, righteye.height);   
     }
     
     //- 顔認識処理全般(目認識も組み合わせて精度を上げる)
@@ -89,7 +89,7 @@ class FaceDetection{
         }     
         
         //- 目認識
-        if(eyeDetect() == false){
+        /*if(eyeDetect() == false){
             println("目が検出されません");
             return false;
         }
@@ -98,7 +98,7 @@ class FaceDetection{
         if(checkFace() == false){
             println("正確性がありません");
             return false;
-        }
+        }*/
         
         return true;
     }
@@ -127,7 +127,7 @@ class FaceDetection{
     }
     
     //- 目認識
-    boolean eyeDetect(){
+    /*boolean eyeDetect(){
         //- 画像を読み込む
         ocve.loadImage(ocvf.getInput().get());
         
@@ -182,7 +182,7 @@ class FaceDetection{
          
         //- 正しいと思える場合
         return true;
-    }
+    }*/
 }
     
     
